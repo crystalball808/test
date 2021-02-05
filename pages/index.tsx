@@ -1,6 +1,5 @@
-import { GetServerSideProps } from "next";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
+import Link from "next/link";
 import { fetchPosts } from "../redux/actions";
 import { Post } from "../utils/intefaces";
 import { wrapper } from "./_app";
@@ -13,11 +12,13 @@ type Props = {
 
 function Home() {
   const posts = useSelector(state => state.posts.posts)
-  
+
   return (
     <ul>
       { posts && posts.map(post => (
-        <li key={post.id}>{post.title}</li>
+        <Link key={post.id} href={'/posts/[id]'} as={`/posts/${post.id}`} ><a>
+          <li >{post.title}</li>
+        </a></Link>
       ))}
     </ul>
   );
