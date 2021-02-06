@@ -1,41 +1,35 @@
 import axios from 'axios';
-import { GetServerSideProps } from 'next';
-import { wrapper } from '../_app'
+import { wrapper } from '../_app';
+import { MainLayout } from '../../components/MainLayout';
+import { Post } from '../../components/Post';
+import { List } from '../../components/List';
+import { Li } from '../../components/Li';
+import { Comment } from '../../utils/intefaces';
 
 const PostPage = ({ post }) => {
-    return (
-        <>
-            <h1>{post.title}</h1>
-            <p>{post.body}</p>
-            <p>{post.id}</p>
-            {post.comments?.map(comment => <div key={comment.id}>
-                <p>{comment.body}</p>
-            </div>)}
-        </>
-    )
-}
-
-// export async function getServerSideProps(context) {
-//     console.log(context);
-//     const postId = context.query.id;
-//     const post = await axios.get(`https://simple-blog-api.crew.red/posts/${postId}?_embed=comments`);
-//     return {
-//         props: {
-//             post
-//         }
-//     }
-// }
+  return (
+    <MainLayout title={post.title}>
+      <Post post={post} />
+      <List>
+        {post.comments?.map((comment: Comment) => (
+          <Li key={comment.id}>{comment.body}</Li>
+        ))}
+      </List>
+    </MainLayout>
+  );
+};
 
 export const getServerSideProps = wrapper.getServerSideProps(
-    async ({store,req,res,query})=>{
-        const post = await axios.get(`https://simple-blog-api.crew.red/posts/${query.id}?_embed=comments`);
-        console.log(post.data);
-        return {
-            props: {
-                post: post.data
-            }
-        }
-    }
-)
+  async ({ store, req, res, query }) => {
+    const post = await axios.get(
+      `https://simple-blog-api.crew.red/posts/${query.id}?_embed=comments`
+    );
+    return {
+      props: {
+        post: post.data,
+      },
+    };
+  }
+);
 
 export default PostPage;

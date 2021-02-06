@@ -5,25 +5,19 @@ import { HYDRATE } from 'next-redux-wrapper';
 
 
 
-const initialState = {
-    posts: []
-}
+// const initialState = {
+//     posts: []
+// }
 
-export const postsReducer = (state = initialState, action: Action) => {
-
+export const postsReducer = (state = [], action: Action) => {
     switch (action.type){
-        
         case HYDRATE:
-            return {
-                ...state,
-                posts: action.payload,
-            }
+            return action.payload
         case FETCH_POSTS:
             return {
                 ...state,
                 posts: action.payload
             }
-
         default:
             return state;
     }

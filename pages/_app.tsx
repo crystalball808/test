@@ -1,9 +1,10 @@
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { createWrapper } from 'next-redux-wrapper';
+import NextNProgress from 'nextjs-progressbar'
 import { postsReducer } from '../redux/postsReducer';
+import '../styles/styles.css'
 
 // const store = createStore(
 //     postsReducer, composeWithDevTools(
@@ -21,7 +22,13 @@ export const wrapper = createWrapper(makeStore);
 
 function MyApp({ Component, pageProps }) {
   return (
+    <>
       <Component {...pageProps} />
+      <NextNProgress
+            color='#b9f2b4'
+            height={6}
+            />
+    </>
   )
 }
 

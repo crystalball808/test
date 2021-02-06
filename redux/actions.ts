@@ -7,4 +7,4 @@ export const fetchPosts = () => async (dispatch) => {
             type: FETCH_POSTS,
             payload: response.data
         })
-    }
+}
