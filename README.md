@@ -1,34 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Blog MVP
 
-## Getting Started
+This is a simple blog based on Next.js
 
-First, run the development server:
+#### Navigation
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+On a navigation there are two links:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Main page with all posts
+2. Page where you are able to create new post
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+#### Main Page
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+On a main page you can see a list of all posts. You can open a page with single post simply by cliking on its title.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+#### Post page
 
-## Learn More
+Here you can see all information about selected post such as title, body and comments if they exist.
 
-To learn more about Next.js, take a look at the following resources:
+#### Create new post page
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Here you can create a post. There are two inputs:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. Post title
+2. Post body
 
-## Deploy on Vercel
+To create a new post you need to fill both of these. When you are done, click on a button "Create post". After that you can your post at the main page.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
