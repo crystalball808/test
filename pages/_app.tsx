@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
+import promise from 'redux-promise-middleware'
 import { createWrapper } from 'next-redux-wrapper';
 import NextNProgress from 'nextjs-progressbar'
 import { postsReducer } from '../redux/postsReducer';
@@ -14,7 +15,7 @@ import '../styles/styles.css'
 const makeStore = () =>{
   return createStore(
     postsReducer, composeWithDevTools(
-      applyMiddleware(thunk)
+      applyMiddleware(thunk, promise)
     )
   )
 }

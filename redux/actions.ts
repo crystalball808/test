@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { Action } from 'redux';
 import { FETCH_POSTS } from './types';
 
 export const fetchPosts = () => async (dispatch) => {

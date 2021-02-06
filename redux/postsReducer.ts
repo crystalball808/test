@@ -9,7 +9,7 @@ import { HYDRATE } from 'next-redux-wrapper';
 //     posts: []
 // }
 
-export const postsReducer = (state = [], action: Action) => {
+export const postsReducer = (state = [], action) => {
     switch (action.type){
         case HYDRATE:
             return action.payload
