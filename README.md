@@ -24,5 +24,5 @@ Here you can create a post. There are two inputs:
 1. Post title
 2. Post body
 
-To create a new post you need to fill both of these. When you are done, click on a button "Create post". After that you can your post at the main page.
+To create a new post you need to fill both of these. When you are done, click on a button "Create post". After that you can see your post at the main page.
 
